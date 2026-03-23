@@ -1,160 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision Leaders | KB4UD Privacy Policy</title>
+  <meta name="description" content="Decision Leaders official application privacy policy page for KB4UD – Budget & Expense Tracker." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #141a36;
+      --card: rgba(20, 26, 54, 0.88);
+      --text: #f4f6ff;
+      --muted: #c2c9e6;
+      --line: rgba(255,255,255,0.10);
+      --primary: #8fd3ff;
+      --primary-2: #68b7ff;
+      --accent: #b5f3d1;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1080px;
+    }
 
-Privacy Policy
+    * { box-sizing: border-box; }
 
-Last updated: 2026
+    html { scroll-behavior: smooth; }
 
-Decision Leaders built the Know Before You Decide – Expense Tracker & Budget Planner app as a Freemium application. This service is provided by Decision Leaders and is intended for use as is.
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(104,183,255,0.18), transparent 26%),
+        radial-gradient(circle at left top, rgba(181,243,209,0.10), transparent 22%),
+        linear-gradient(180deg, #0a0f1e 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.8;
+    }
 
-This page is used to inform users regarding our policies with the collection, use, and disclosure of personal information for anyone who decides to use our Service.
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
 
-If you choose to use our Service, then you agree to the collection and use of information in relation to this policy.
-Information Collection and Use
+    a:hover { text-decoration: underline; }
 
-The application is designed to help users track expenses, manage financial commitments, and simulate financial decisions.
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-The app may store the following information locally on your device:
+    .hero {
+      padding: 72px 0 28px;
+    }
 
-    Financial transactions (income, expenses, transfers)
-    Budgets and financial commitments
-    Installments and debt tracking information
-    Scenario simulations and financial forecasts
-    App settings such as language, currency, and theme preferences
+    .hero-card {
+      background: linear-gradient(135deg, rgba(20,26,54,0.96), rgba(14,19,40,0.92));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      overflow: hidden;
+      position: relative;
+    }
 
-This information is stored locally on the user's device and is not transmitted to external servers unless required for specific services described below.
-Advertising
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -60px;
+      top: -80px;
+      background: radial-gradient(circle, rgba(143,211,255,0.18), transparent 65%);
+      pointer-events: none;
+    }
 
-The free version of the application may display advertisements through third-party advertising networks such as Google AdMob.
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(143,211,255,0.10);
+      border: 1px solid rgba(143,211,255,0.18);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
 
-These services may collect certain information automatically to provide relevant advertisements, including:
+    h1, h2, h3 { margin-top: 0; }
 
-    Device information
-    Advertising identifiers
-    App interaction data
+    h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.15;
+      margin: 18px 0 14px;
+    }
 
-This data collection is governed by the privacy policies of the respective advertising providers.
-Subscription and Payments
+    .hero p {
+      color: var(--muted);
+      max-width: 780px;
+      margin: 0;
+      font-size: 17px;
+    }
 
-The app may offer optional premium subscriptions that unlock additional features.
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
 
-All subscription purchases are processed securely through Google Play Billing.
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: .2s ease;
+    }
 
-The application does not collect or store payment card details.
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #07101f;
+    }
 
-Payment information is handled entirely by Google Play according to their privacy and security policies.
-Notifications
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
 
-The application may send local notifications to remind users to record daily transactions, review budgets, or track financial commitments.
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
 
-These notifications are generated locally on the device and do not require personal data to be transmitted to external servers.
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
 
-Users can disable notifications at any time through their device settings.
-Data Security
+    .meta-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
 
-We value your trust in providing your information. Therefore, we strive to use commercially acceptable means of protecting it.
+    .meta-label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
 
-Most financial data stored by the application remains on the user's device only and is not transmitted to external servers.
+    .meta-value {
+      font-weight: 700;
+      color: var(--text);
+      word-break: break-word;
+    }
 
-However, no method of electronic storage is 100% secure, and we cannot guarantee absolute security.
-Children's Privacy
+    .section {
+      padding: 18px 0;
+    }
 
-This application is not directed to children under the age of 13.
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
 
-We do not knowingly collect personally identifiable information from children under 13.
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-If we discover that a child under 13 has provided personal information, we immediately remove such data.
-Third-Party Services
+    .section-sub {
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
 
-The app may use third-party services that may collect information used to identify you.
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
 
-Examples include:
+    .toc a {
+      display: block;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-weight: 700;
+    }
 
-    Google Play Services
-    Google AdMob
-    Google Play Billing
+    .toc a:hover {
+      border-color: rgba(143,211,255,0.34);
+      text-decoration: none;
+    }
 
-Changes to This Privacy Policy
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
 
-We may update our Privacy Policy from time to time.
+    .policy-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      background: rgba(255,255,255,0.02);
+    }
 
-Users are advised to review this page periodically for any changes.
+    .policy-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
 
-Changes become effective immediately after they are posted on this page.
-Contact Us
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
 
-If you have any questions or suggestions about this Privacy Policy, please contact us:
+    li { margin-bottom: 8px; }
 
-Decision Leaders
+    .contact-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
 
-decisionleaders@gmail.com
-سياسة الخصوصية
+    .contact-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
 
-آخر تحديث: 2026
+    .contact-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
 
-قامت شركة Decision Leaders بتطوير تطبيق اعرف قبل ما تقرر – تتبع المصروفات والتخطيط المالي كتطبيق مجاني مع ميزات مدفوعة اختيارية.
+    .lang-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 0 24px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+    }
 
-توضح هذه الصفحة سياساتنا المتعلقة بجمع واستخدام وحماية المعلومات عند استخدامك للتطبيق.
+    .lang-divider::before,
+    .lang-divider::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+      flex: 1;
+    }
 
-باستخدامك للتطبيق فإنك توافق على سياسة الخصوصية الموضحة أدناه.
-المعلومات التي يتم جمعها واستخدامها
+    .ar {
+      direction: rtl;
+      text-align: right;
+      font-family: Tahoma, Arial, sans-serif;
+    }
 
-تم تصميم التطبيق لمساعدة المستخدمين على إدارة شؤونهم المالية وتتبع المصروفات وتحليل القرارات المالية.
+    footer {
+      padding: 26px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
 
-قد يقوم التطبيق بتخزين بعض البيانات محليًا على جهاز المستخدم مثل:
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-    المعاملات المالية (الدخل والمصروفات والتحويلات)
-    الميزانيات الشهرية
-    الالتزامات المالية والاشتراكات
-    بيانات الأقساط والديون
-    سيناريوهات التخطيط المالي
-    إعدادات التطبيق مثل اللغة والعملة والثيم
+    @media (max-width: 720px) {
+      .hero { padding-top: 34px; }
+      .hero-card, .panel { padding: 22px; }
+      h1 { font-size: 32px; }
+      .section-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap hero">
+    <div class="hero-card">
+      <div class="eyebrow">Decision Leaders • Official Website</div>
+      <h1>KB4UD – Budget &amp; Expense Tracker</h1>
+      <p>
+        Official privacy policy and developer information for KB4UD, a personal finance app designed to help users track expenses,
+        manage budgets, monitor installments and debts, and make smarter financial decisions with confidence.
+      </p>
 
-يتم تخزين هذه البيانات محليًا على جهاز المستخدم فقط ولا يتم إرسالها إلى أي خوادم خارجية إلا في الحالات الموضحة في هذه السياسة.
-الإعلانات
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#privacy-policy">Read Privacy Policy</a>
+        <a class="btn btn-secondary" href="mailto:decisionleaders@gmail.com">Contact Developer</a>
+      </div>
 
-قد تعرض النسخة المجانية من التطبيق إعلانات من خلال خدمات طرف ثالث مثل Google AdMob.
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Developer</span>
+          <span class="meta-value">Decision Leaders</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Application</span>
+          <span class="meta-value">KB4UD – Budget &amp; Expense Tracker</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Policy Status</span>
+          <span class="meta-value">Active</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Last Updated</span>
+          <span class="meta-value">2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-قد تقوم هذه الخدمات بجمع بعض المعلومات التقنية مثل:
+  <div class="wrap section">
+    <div class="panel">
+      <h2 class="section-title">Quick Navigation</h2>
+      <p class="section-sub">This page provides privacy information for KB4UD in both English and Arabic.</p>
+      <div class="toc">
+        <a href="#privacy-policy">English Privacy Policy</a>
+        <a href="#contact">Contact Information</a>
+        <a href="#privacy-policy-ar">سياسة الخصوصية بالعربية</a>
+      </div>
+    </div>
+  </div>
 
-    نوع الجهاز
-    معرف الإعلانات
-    بيانات استخدام التطبيق
+  <div class="wrap section" id="privacy-policy">
+    <div class="panel">
+      <h2 class="section-title">Privacy Policy</h2>
+      <p class="section-sub">Last updated: 2026</p>
 
-وذلك بهدف عرض إعلانات مناسبة للمستخدم.
-الاشتراكات والدفع
+      <div class="policy-grid">
+        <div class="policy-card">
+          <h3>Overview</h3>
+          <p>
+            Decision Leaders built the <strong>Know Before You Decide – Expense Tracker &amp; Budget Planner</strong> app as a freemium application.
+            This service is provided by Decision Leaders and is intended for use as is.
+          </p>
+          <p>
+            This page is used to inform users regarding our policies with the collection, use, and disclosure of personal information for anyone
+            who decides to use our service. By using the application, you agree to the practices described in this policy.
+          </p>
+        </div>
 
-يوفر التطبيق بعض الميزات المدفوعة من خلال اشتراكات اختيارية.
+        <div class="policy-card">
+          <h3>Information Collection and Use</h3>
+          <p>The application is designed to help users track expenses, manage financial commitments, and simulate financial decisions.</p>
+          <p>The app may store the following information locally on your device:</p>
+          <ul>
+            <li>Financial transactions (income, expenses, transfers)</li>
+            <li>Budgets and financial commitments</li>
+            <li>Installments and debt tracking information</li>
+            <li>Scenario simulations and financial forecasts</li>
+            <li>App settings such as language, currency, and theme preferences</li>
+          </ul>
+          <p class="small">This information is stored locally on the user's device and is not transmitted to external servers unless required for specific services described below.</p>
+        </div>
 
-تتم عمليات الدفع بشكل آمن عبر Google Play Billing.
+        <div class="policy-card">
+          <h3>Advertising</h3>
+          <p>
+            The free version of the application may display advertisements through third-party advertising networks such as Google AdMob.
+            These services may collect certain information automatically to provide relevant advertisements.
+          </p>
+          <ul>
+            <li>Device information</li>
+            <li>Advertising identifiers</li>
+            <li>App interaction data</li>
+          </ul>
+          <p class="small">This data collection is governed by the privacy policies of the respective advertising providers.</p>
+        </div>
 
-لا يقوم التطبيق بجمع أو تخزين أي بيانات خاصة ببطاقات الدفع أو الحسابات البنكية.
-الإشعارات
+        <div class="policy-card">
+          <h3>Subscription and Payments</h3>
+          <p>The app may offer optional premium subscriptions that unlock additional features.</p>
+          <p>All subscription purchases are processed securely through Google Play Billing.</p>
+          <p>The application does not collect or store payment card details. Payment information is handled entirely by Google Play according to their privacy and security policies.</p>
+        </div>
 
-قد يقوم التطبيق بإرسال إشعارات محلية لتذكير المستخدم بـ:
+        <div class="policy-card">
+          <h3>Notifications</h3>
+          <p>
+            The application may send local notifications to remind users to record daily transactions, review budgets, or track financial commitments.
+            These notifications are generated locally on the device and do not require personal data to be transmitted to external servers.
+          </p>
+          <p>Users can disable notifications at any time through their device settings.</p>
+        </div>
 
-    تسجيل معاملاته اليومية
-    مراجعة الميزانية
-    متابعة الالتزامات المالية
+        <div class="policy-card">
+          <h3>Data Security</h3>
+          <p>
+            We value your trust in providing your information. Therefore, we strive to use commercially acceptable means of protecting it.
+            Most financial data stored by the application remains on the user's device only and is not transmitted to external servers.
+          </p>
+          <p>However, no method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
 
-يمكن للمستخدم إيقاف الإشعارات في أي وقت من إعدادات الجهاز.
-حماية البيانات
+        <div class="policy-card">
+          <h3>Children's Privacy</h3>
+          <p>This application is not directed to children under the age of 13.</p>
+          <p>We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided personal information, we immediately remove such data.</p>
+        </div>
 
-نسعى إلى حماية بيانات المستخدم باستخدام وسائل مناسبة.
+        <div class="policy-card">
+          <h3>Third-Party Services</h3>
+          <p>The app may use third-party services that may collect information used to identify you. Examples include:</p>
+          <ul>
+            <li>Google Play Services</li>
+            <li>Google AdMob</li>
+            <li>Google Play Billing</li>
+          </ul>
+        </div>
 
-تظل معظم البيانات المالية مخزنة محليًا على جهاز المستخدم.
-خصوصية الأطفال
+        <div class="policy-card">
+          <h3>Changes to This Privacy Policy</h3>
+          <p>We may update our Privacy Policy from time to time. Users are advised to review this page periodically for any changes.</p>
+          <p>Changes become effective immediately after they are posted on this page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-هذا التطبيق غير موجه للأطفال دون سن 13 عامًا.
-خدمات الطرف الثالث
+  <div class="wrap section" id="contact">
+    <div class="panel">
+      <h2 class="section-title">Contact Information</h2>
+      <p class="section-sub">If you have any questions or suggestions about this Privacy Policy, please contact us.</p>
+      <div class="contact-box">
+        <div class="contact-item">
+          <strong>Developer</strong>
+          Decision Leaders
+        </div>
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:decisionleaders@gmail.com">decisionleaders@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Policy Page</strong>
+          KB4UD – Budget &amp; Expense Tracker
+        </div>
+      </div>
+    </div>
+  </div>
 
-    Google Play Services
-    Google AdMob
-    Google Play Billing
+  <div class="wrap section" id="privacy-policy-ar">
+    <div class="panel ar">
+      <div class="lang-divider">Arabic</div>
+      <h2 class="section-title">سياسة الخصوصية</h2>
+      <p class="section-sub">آخر تحديث: 2026</p>
 
-التعديلات على سياسة الخصوصية
+      <div class="policy-grid">
+        <div class="policy-card">
+          <h3>نظرة عامة</h3>
+          <p>
+            قامت شركة <strong>Decision Leaders</strong> بتطوير تطبيق
+            <strong>اعرف قبل ما تقرر – تتبع المصروفات والتخطيط المالي</strong>
+            كتطبيق مجاني مع مزايا مدفوعة اختيارية.
+          </p>
+          <p>
+            توضح هذه الصفحة سياساتنا المتعلقة بجمع واستخدام وحماية المعلومات عند استخدامك للتطبيق، وباستخدامك للتطبيق فإنك توافق على ما ورد في هذه السياسة.
+          </p>
+        </div>
 
-قد نقوم بتحديث سياسة الخصوصية من وقت لآخر.
-التواصل معنا
+        <div class="policy-card">
+          <h3>المعلومات التي يتم جمعها واستخدامها</h3>
+          <p>تم تصميم التطبيق لمساعدة المستخدمين على إدارة شؤونهم المالية وتتبع المصروفات وتحليل القرارات المالية.</p>
+          <p>قد يقوم التطبيق بتخزين بعض البيانات محليًا على جهاز المستخدم مثل:</p>
+          <ul>
+            <li>المعاملات المالية (الدخل والمصروفات والتحويلات)</li>
+            <li>الميزانيات والالتزامات المالية</li>
+            <li>بيانات الأقساط والديون</li>
+            <li>سيناريوهات التخطيط المالي والتوقعات</li>
+            <li>إعدادات التطبيق مثل اللغة والعملة والثيم</li>
+          </ul>
+          <p class="small">يتم تخزين هذه البيانات محليًا على جهاز المستخدم فقط ولا يتم إرسالها إلى أي خوادم خارجية إلا في الحالات الموضحة في هذه السياسة.</p>
+        </div>
 
-Decision Leaders
+        <div class="policy-card">
+          <h3>الإعلانات</h3>
+          <p>قد تعرض النسخة المجانية من التطبيق إعلانات من خلال خدمات طرف ثالث مثل Google AdMob.</p>
+          <p>قد تقوم هذه الخدمات بجمع بعض المعلومات التقنية بهدف عرض إعلانات مناسبة للمستخدم، مثل:</p>
+          <ul>
+            <li>نوع الجهاز</li>
+            <li>معرف الإعلانات</li>
+            <li>بيانات استخدام التطبيق</li>
+          </ul>
+        </div>
 
-decisionleaders@gmail.com
+        <div class="policy-card">
+          <h3>الاشتراكات والدفع</h3>
+          <p>يوفر التطبيق بعض الميزات المدفوعة من خلال اشتراكات اختيارية.</p>
+          <p>تتم عمليات الدفع بشكل آمن عبر Google Play Billing.</p>
+          <p>لا يقوم التطبيق بجمع أو تخزين أي بيانات خاصة ببطاقات الدفع، ويتم التعامل مع معلومات الدفع بالكامل من خلال Google Play وفقًا لسياساتها.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3>الإشعارات</h3>
+          <p>قد يقوم التطبيق بإرسال إشعارات محلية لتذكير المستخدم بتسجيل المعاملات اليومية أو مراجعة الميزانية أو متابعة الالتزامات المالية.</p>
+          <p>يمكن للمستخدم إيقاف الإشعارات في أي وقت من إعدادات الجهاز.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3>حماية البيانات</h3>
+          <p>نسعى إلى حماية بيانات المستخدم باستخدام وسائل مناسبة، وتظل معظم البيانات المالية مخزنة محليًا على جهاز المستخدم.</p>
+          <p>ومع ذلك، لا توجد وسيلة تخزين إلكتروني آمنة بنسبة 100% ولا يمكننا ضمان الأمان المطلق.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3>خصوصية الأطفال</h3>
+          <p>هذا التطبيق غير موجه للأطفال دون سن 13 عامًا، ولا نقوم عن قصد بجمع معلومات شخصية من الأطفال دون هذا العمر.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3>خدمات الطرف الثالث</h3>
+          <p>قد يستخدم التطبيق خدمات طرف ثالث قد تجمع بعض المعلومات، ومن أمثلتها:</p>
+          <ul>
+            <li>Google Play Services</li>
+            <li>Google AdMob</li>
+            <li>Google Play Billing</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <h3>التعديلات على سياسة الخصوصية</h3>
+          <p>قد نقوم بتحديث سياسة الخصوصية من وقت لآخر، ويُنصح المستخدمون بمراجعة هذه الصفحة دوريًا للاطلاع على أي تحديثات.</p>
+        </div>
+      </div>
+
+      <div class="contact-box" style="margin-top:24px;">
+        <div class="contact-item">
+          <strong>المطور</strong>
+          Decision Leaders
+        </div>
+        <div class="contact-item">
+          <strong>البريد الإلكتروني</strong>
+          <a href="mailto:decisionleaders@gmail.com">decisionleaders@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Decision Leaders. All rights reserved.
+  </footer>
+</body>
+</html>
